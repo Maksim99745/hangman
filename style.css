@@ -1,0 +1,436 @@
+@font-face {
+  font-family: Munchkin;
+  src: url(assets/fonts/munchkin.ttf);
+}
+html {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(247, 219, 188);
+  font-family: Munchkin, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  align-self: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  border: 4px solid rgb(91, 27, 17);
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  align-self: center;
+  margin: 0 10px;
+}
+
+.gallows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 10px 0 0 10px;
+}
+
+.gallows__item__human-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallows__item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 80%;
+}
+
+.gallows__item_one {
+  align-self: flex-start;
+  width: 190px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #000;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.gallows__item_two {
+  align-self: flex-start;
+  width: 14px;
+  height: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 0 0 5px 5px;
+  background: #000;
+  margin-left: 25px;
+}
+
+.gallows__item_three {
+  position: absolute;
+  top: 20px;
+  left: 42px;
+  transform: rotate(45deg);
+  align-self: flex-start;
+  width: 7px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #000;
+}
+
+.gallows__item_four {
+  position: absolute;
+  top: 20px;
+  left: 180px;
+  align-self: flex-start;
+  width: 7px;
+  height: 55px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #000;
+}
+
+.gallows__item__human-box {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 70px;
+  height: 160px;
+  top: 72px;
+  left: 148px;
+  background-color: rgb(247, 219, 188);
+}
+
+.human {
+  transition: 2s ease-in-out;
+}
+
+.human-head {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  border: 5px solid #909090;
+  background: rgb(247, 219, 188);
+  align-self: center;
+  opacity: 0;
+}
+
+.human-body {
+  width: 5px;
+  height: 65px;
+  background-color: #909090;
+  align-self: center;
+  opacity: 0;
+}
+
+.human-left-hand {
+  position: absolute;
+  width: 5px;
+  height: 30px;
+  top: 50px;
+  right: 42px;
+  background-color: #909090;
+  align-self: center;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.human-right-hand {
+  position: absolute;
+  width: 5px;
+  height: 30px;
+  top: 50px;
+  left: 42px;
+  background-color: #909090;
+  align-self: center;
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+
+.human-left-leg {
+  position: absolute;
+  width: 5px;
+  height: 40px;
+  top: 100px;
+  right: 45px;
+  background-color: #909090;
+  align-self: center;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.human-right-leg {
+  position: absolute;
+  width: 5px;
+  height: 40px;
+  top: 100px;
+  left: 45px;
+  background-color: #909090;
+  align-self: center;
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+
+.human-pies_visible {
+  opacity: 1;
+  transition: 1.2s ease-in-out;
+}
+
+.gallows-name__block {
+  display: flex;
+  justify-content: center;
+  height: 20%;
+  padding-left: 15px;
+  margin-top: 25px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.game-name {
+  font: 22px Munchkin, sans-serif;
+  align-self: center;
+  margin: 0;
+}
+
+.guessing {
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+  margin-left: 40px;
+}
+
+.guessing-word {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 70px;
+  margin-top: 50px;
+}
+
+.letter__box {
+  display: flex;
+  justify-content: center;
+  margin-right: 4px;
+  width: 30px;
+  height: 30px;
+  border-bottom: 3px solid rgb(91, 27, 17);
+}
+
+.letter__box_solved {
+  border-bottom: 3px solid rgb(247, 219, 188);
+}
+
+.letter {
+  font-size: 28px;
+  opacity: 0;
+}
+
+.letter_visible {
+  opacity: 1;
+}
+
+.hint-block {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  width: 400px;
+  height: 54px;
+  font-size: 24px;
+  padding: 0 5px;
+}
+
+.incorrect-block {
+  display: flex;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: center;
+  height: 35px;
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.incorrect-block p {
+  margin: 0;
+}
+
+.attempts {
+  color: rgba(189, 52, 52, 0.685);
+}
+
+.keyboard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 400px;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  width: 43px;
+  height: 38px;
+  margin-top: 2px;
+  margin-right: 3px;
+  border-radius: 4px;
+  color: #000;
+  font-size: 28px;
+  border: 3px solid rgb(91, 27, 17);
+  cursor: pointer;
+  transition: 1.2s ease-in-out;
+}
+
+.key_checked {
+  background-color: rgb(91, 27, 17);
+  cursor: auto;
+  color: rgb(247, 219, 188);
+}
+
+.modal {
+  position: absolute;
+  bottom: 104%;
+  width: 100lvw;
+  height: 100lvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+
+.body-modal {
+  overflow-x: hidden;
+}
+
+.modal_opened {
+  bottom: 0;
+}
+
+.modal__overlay {
+  position: absolute;
+  width: 102%;
+  height: 104%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.modal__window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  width: 300px;
+  height: 300px;
+  background-color: rgb(247, 219, 188);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  gap: 22px;
+}
+
+.modal__window__result {
+  font-size: 24px;
+}
+
+.modal__window__word {
+  font-size: 28px;
+}
+
+.modal__window__new-game {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  width: 120px;
+  height: 28px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgb(91, 27, 17);
+  cursor: pointer;
+  color: rgb(247, 219, 188);
+  font-size: 24px;
+  box-shadow: 0px 0px 10px 0px rgba(103, 113, 120, 0.2);
+}
+
+@media (max-width: 768px) {
+  .keyboard {
+    max-width: 500px;
+  }
+  .block {
+    flex-direction: column;
+  }
+  .guessing {
+    margin-left: 0;
+  }
+  .gallows {
+    width: 100%;
+    align-items: center;
+  }
+  .gallows__item_two {
+    height: 200px;
+  }
+  .gallows-name__block {
+    padding: 0;
+  }
+  .incorrect-block {
+    margin-bottom: 10px;
+  }
+  .gallows-name__block {
+    margin-top: 18px;
+  }
+  .guessing-word {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 580px) {
+  .key {
+    width: 34px;
+    height: 30px;
+    font-size: 22px;
+  }
+  .hint-block {
+    width: 320px;
+    font-size: 22px;
+    height: 50px;
+  }
+}
+@media (max-width: 420px) {
+  .keyboard {
+    max-width: 340px;
+  }
+}/*# sourceMappingURL=style.css.map */
